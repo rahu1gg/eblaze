@@ -67,7 +67,7 @@ function ArrowLink() {
     <div className='relative ml-1 size-10 overflow-hidden'>
       <div className='absolute transition-all duration-200 group-hover:-translate-y-10 group-hover:translate-x-9'>
         <Arrow />
-        <Arrow />
+        <Arrow className='-translate-x-9' />
       </div>
     </div>
   );
