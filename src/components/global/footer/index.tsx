@@ -88,10 +88,18 @@ function Sitemap() {
 function FooterOutro() {
   return (
     <div className='bg-muted text-sm py-10 px-7 font-light text-primary-color flex items-center justify-between'>
-      <p className=''>
+      <p>
         Crafted by{' '}
-        <Button className='p-0 text-primary-color underline font-light' variant='link'>
-          <Link href={'/team'}>Eblaze team</Link>
+        <Button className='group p-0 text-primary-color font-medium' variant='link'>
+          <Link href={'/team'} className='inline-flex items-center justify-start'>
+            Eblaze team
+            <div className='relative ml-2 size-5 overflow-hidden'>
+              <div className='absolute transition-all duration-200 group-hover:-translate-y-5 group-hover:translate-x-5'>
+                <Arrow className='size-5 inline-block' />
+                <Arrow className='size-5 -translate-x-5' />
+              </div>
+            </div>
+          </Link>
         </Button>
       </p>
       <p className='font-medium'>© 2024 ELAZE</p>
