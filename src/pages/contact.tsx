@@ -1,3 +1,4 @@
+import Pixels from '@/components/global/animation/pixels';
 import { Footer } from '@/components/global/footer';
 import { Arrow } from '@/components/global/icons';
 import { APP } from '@/constants/app';
@@ -7,6 +8,10 @@ import { Fragment } from 'react';
 export default function Page() {
   return (
     <Fragment>
+      {/* <Parent> */}
+      <div className='fixed top-0 left-0 h-screen z-[10] pointer-events-none'>
+        <Pixels />
+      </div>
       <main>
         <section>
           <div className='min-h-screen mx-5 py-10'>
@@ -31,6 +36,7 @@ export default function Page() {
         </section>
       </main>
       <Footer />
+      {/* </Parent> */}
     </Fragment>
   );
 }

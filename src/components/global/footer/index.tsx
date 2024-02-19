@@ -2,7 +2,7 @@ import { APP_LINKS, SOCIAL_LINKS } from '@/constants/app';
 import Link from 'next/link';
 import { CardBody, CardContainer, CardItem } from '../../ui/3d-card';
 import { Button } from '../../ui/button';
-import { Hack } from '../hack';
+import { Hack } from '../animation/hack';
 import { Arrow, Star } from '../icons';
 import { FooterLink } from './client';
 
