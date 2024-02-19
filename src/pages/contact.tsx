@@ -8,7 +8,6 @@ import { Fragment } from 'react';
 export default function Page() {
   return (
     <Fragment>
-      {/* <Parent> */}
       <div className='fixed top-0 left-0 h-screen z-[10] pointer-events-none'>
         <Pixels />
       </div>
@@ -36,7 +35,6 @@ export default function Page() {
         </section>
       </main>
       <Footer />
-      {/* </Parent> */}
     </Fragment>
   );
 }
