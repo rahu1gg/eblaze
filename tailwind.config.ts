@@ -71,6 +71,7 @@ const config = {
       fontFamily: {
         supply: ['var(--font-supply)'],
         flexible: ['var(--font-flexible)'],
+        inter: ['var(--font-inter)'],
       },
     },
   },

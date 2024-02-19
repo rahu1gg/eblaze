@@ -2,7 +2,7 @@ import { APP_LINKS, SOCIAL_LINKS } from '@/constants/app';
 import Link from 'next/link';
 import { CardBody, CardContainer, CardItem } from '../../ui/3d-card';
 import { Button } from '../../ui/button';
-import { Hack } from '../animation/hack';
+import { Heading } from '../framer/heading';
 import { Arrow, Star } from '../icons';
 import { FooterLink } from './client';
 
@@ -13,9 +13,7 @@ export function Footer() {
         <CardBody className='h-auto w-full flex items-center justify-center'>
           <CardItem>
             <div>
-              <p className='text-[25vw] pb-20 font-bold uppercase'>
-                <Hack dataValue='EBLAZE' />
-              </p>
+              <Heading className='text-[25vw] pb-20 font-bold uppercase flex items-center justify-center'>EBLAZE</Heading>
             </div>
           </CardItem>
         </CardBody>
@@ -52,9 +50,7 @@ export function Footer() {
           <p className=''>
             Crafted by{' '}
             <Button className='p-0 text-primary-color underline font-light' variant='link'>
-              <Link href={'/team'}>
-                <Hack dataValue='Eblaze team'>Eblaze team</Hack>
-              </Link>
+              <Link href={'/team'}>Eblaze team</Link>
             </Button>
           </p>
           <p className='font-medium'>© 2024 ELAZE</p>

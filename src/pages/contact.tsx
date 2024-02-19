@@ -1,5 +1,5 @@
-import Pixels from '@/components/global/animation/pixels';
 import { Footer } from '@/components/global/footer';
+import Pixels from '@/components/global/framer/pixels';
 import { Arrow } from '@/components/global/icons';
 import { APP } from '@/constants/app';
 import Link from 'next/link';
