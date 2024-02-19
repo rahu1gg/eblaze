@@ -1,3 +1,4 @@
+import { Heading } from '@/components/global/animation/heading';
 import { Column } from '@/components/global/animation/parallax-card';
 import Paragraph from '@/components/global/animation/word';
 import { useScroll, useTransform } from 'framer-motion';
@@ -11,7 +12,6 @@ export function About() {
     target: gallery,
     offset: ['start end', 'end start'],
   });
-  const { height } = dimension;
   const y = useTransform(scrollYProgress, [0, 1], [100, -200]);
   const y2 = useTransform(scrollYProgress, [0, 1], [400, -400]);
 
@@ -33,7 +33,7 @@ export function About() {
       <div ref={gallery} className='h-screen mx-5 flex items-center justify-evenly overflow-y-hidden'>
         <Column className='' y={y}>
           <div className='relative -top-0'>
-            <h2 className='text-6xl'>About</h2>
+            <Heading className='text-9xl'>About</Heading>
             <Paragraph
               paragraph='Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum placeat suscipit modi dolor nostrum numquam quaerat aut et magni obcaecati
             totam qui quibusdam ducimus esse, maxime deleniti sequi quae aspernatur, excepturi accusamus! Quas soluta ratione quod atque laudantium!'

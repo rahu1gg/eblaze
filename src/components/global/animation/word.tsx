@@ -10,7 +10,7 @@ export default function Paragraph({ paragraph }: { paragraph: string }) {
 
   const words = paragraph.split(' ');
   return (
-    <p ref={container} className='flex text-foreground flex-wrap max-w-[530px]'>
+    <p ref={container} className='flex text-foreground flex-wrap max-w-[530px] font-light'>
       {words.map((word, i) => {
         const start = i / words.length;
         const end = start + 1 / words.length;
