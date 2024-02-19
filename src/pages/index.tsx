@@ -9,7 +9,7 @@ export default function Home() {
       <main>
         {/* <FramerWrapper /> */}
         <section>
-          <div className='h-screen bg-red-200'>
+          <div className='h-screen'>
             <p>Hello world</p>
           </div>
         </section>

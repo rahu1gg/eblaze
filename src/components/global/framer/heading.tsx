@@ -18,9 +18,13 @@ const anim: Variants = {
   }),
 };
 
-export function Heading({ className, children, ...props }: ComponentPropsWithoutRef<'h2'>) {
+interface HeadingProps extends ComponentPropsWithoutRef<'h2'> {
+  amount?: number;
+}
+
+export function Heading({ className, children, amount = 0.95, ...props }: HeadingProps) {
   const ref = useRef<HTMLHeadingElement>(null);
-  const inView = useInView(ref, { once: true });
+  const inView = useInView(ref, { once: true, amount });
 
   if (typeof children !== 'string') return <h2>Only strings allowed</h2>;
   const shuffledIndexes = shuffle([...children.split('')].map((_, i) => i));

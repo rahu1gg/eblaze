@@ -3,16 +3,22 @@ import Link from 'next/link';
 import { CardBody, CardContainer, CardItem } from '../../ui/3d-card';
 import { Button } from '../../ui/button';
 import { Heading } from '../framer/heading';
+import Line from '../framer/line';
 import { Arrow, Star } from '../icons';
 
 export function Footer() {
   return (
     <footer className='bg-primary-color'>
-      <CardContainer className='mt-20 border-t rounded-none mx-5 w-full !text-muted hover:!text-background' containerClassName='pt-0 pb-20'>
+      <div className='pt-20 mx-7'>
+        <Line className='text-background' />
+      </div>
+      <CardContainer className='block mt-20rounded-none mx-5 w-full !text-muted hover:!text-background' containerClassName='pt-0 pb-20'>
         <CardBody className='h-auto w-full flex items-center justify-center'>
           <CardItem>
             <div>
-              <Heading className='text-[25vw] pb-20 font-bold uppercase flex items-center justify-center'>EBLAZE</Heading>
+              <Heading amount={0.5} className='text-[25vw] font-bold uppercase flex items-center justify-center'>
+                EBLAZE
+              </Heading>
             </div>
           </CardItem>
         </CardBody>
@@ -39,11 +45,11 @@ function ArrowLink() {
 
 function SocialLinks() {
   return (
-    <div>
+    <div className='pt-20'>
       <p className='text-xs p-5 text-background font-bold'>Socials</p>
       <ul className='group/ul'>
         {SOCIAL_LINKS.map(({ id, label, href }) => (
-          <li key={id} className='border-t last-of-type:border-b group-hover/ul:blur-[6px] group-hover/ul:hover:blur-0 duration-500'>
+          <li key={id} className='border-t group-hover/ul:blur-[6px] group-hover/ul:hover:blur-0 duration-500'>
             <Link
               href={href}
               className={'group inline-flex items-center justify-between text-muted bg-primary-color p-5 w-full text-6xl font-bold capitalize'}
