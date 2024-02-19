@@ -13,19 +13,21 @@ export function Footer() {
         <CardBody className='h-auto w-full flex items-center justify-center'>
           <CardItem>
             <div>
-              <p className='text-[25vw] pb-20 font-bold'>EBLAZE</p>
+              <p className='text-[25vw] pb-20 font-bold uppercase'>
+                <Hack dataValue='EBLAZE' />
+              </p>
             </div>
           </CardItem>
         </CardBody>
       </CardContainer>
       <div>
         <div>
-          <p className='text-sm p-5 text-background font-medium'>Socials</p>
+          <p className='text-xs p-5 text-background font-medium'>Socials</p>
           {SOCIAL_LINKS.map(({ id, label, href }) => (
             <FooterLink
               key={id}
               href={href}
-              className='text-muted bg-primary-color inline-flex p-5 w-full border-t text-6xl font-bold uppercase last-of-type:border-b'
+              className='text-muted bg-primary-color inline-flex p-5 w-full border-t text-6xl font-bold capitalize last-of-type:border-b'
               target='_blank'
               rel='noreferrer'
               dataValue={label}
@@ -34,22 +36,22 @@ export function Footer() {
           ))}
         </div>
         <div>
-          <p className='text-sm px-5 pb-5 pt-80 text-background font-medium'>Site map</p>
+          <p className='text-xs px-5 pb-5 pt-80 text-background font-medium'>Site map</p>
           {APP_LINKS.map(({ id, label, href }) => (
             <FooterLink
               key={id}
               href={href}
-              className='text-muted bg-primary-color inline-flex p-5 w-full border-t text-6xl font-bold uppercase last-of-type:border-b'
+              className='text-muted bg-primary-color inline-flex p-5 w-full border-t text-6xl font-bold capitalize last-of-type:border-b'
               dataValue={label}
               payload={<Star />}
               payloadClassName='rotate-0 group-hover:rotate-[360deg] duration-1000 origin-center h-10 flex items-center justify-center'
             />
           ))}
         </div>
-        <div className='bg-muted text-sm py-10 px-7 text-primary-color flex items-center justify-between'>
+        <div className='bg-muted text-sm py-10 px-7 font-light text-primary-color flex items-center justify-between'>
           <p className=''>
             Crafted by{' '}
-            <Button className='p-0 text-primary-color underline' variant='link'>
+            <Button className='p-0 text-primary-color underline font-light' variant='link'>
               <Link href={'/team'}>
                 <Hack dataValue='Eblaze team'>Eblaze team</Hack>
               </Link>
