@@ -1,4 +1,4 @@
-import ZoomParallax from '@/components/gallery';
+import ZoomParallax from '@/components/pages/gallery';
 import { Fragment } from 'react';
 
 export default function Page() {
