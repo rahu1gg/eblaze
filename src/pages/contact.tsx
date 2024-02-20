@@ -1,4 +1,6 @@
 import { Footer } from '@/components/global/footer';
+import { Heading } from '@/components/global/framer/heading';
+import Paragraph from '@/components/global/framer/paragraph';
 import Pixels from '@/components/global/framer/pixels';
 import { Arrow } from '@/components/global/icons';
 import { APP } from '@/constants/app';
@@ -14,13 +16,15 @@ export default function Page() {
       <main>
         <section>
           <div className='min-h-screen mx-5 py-10'>
-            <div className='uppercase font-bold text-9xl'>
-              <h2>Let's Build</h2>
+            <div>
+              <Paragraph className='uppercase font-bold text-9xl'>Let's Build</Paragraph>
               <h2 className='flex items-end justify-between pt-4'>
                 <Link href={'/'}>
                   <Arrow className='text-primary-color' />
                 </Link>
-                <span>Together</span>
+                <span>
+                  <Heading className='uppercase font-bold text-9xl'>Together</Heading>
+                </span>
               </h2>
             </div>
             <div className='mt-20'>
