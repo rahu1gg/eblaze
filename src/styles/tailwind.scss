@@ -77,3 +77,9 @@
 		@apply bg-background text-foreground overflow-x-hidden;
 	}
 }
+
+@layer utilities {
+	.clip-circle {
+		clip-path: circle(50%);
+	}
+}

@@ -12,7 +12,7 @@ const anim: Variants = {
     scaleY: 1,
     filter: 'blur(0px)',
     transition: {
-      duration: 0.3,
+      duration: 0.15,
       delay: 0.2 + 0.07 * i,
     },
   }),
@@ -30,7 +30,7 @@ export function Heading({ className, children, amount = 0.95, ...props }: Headin
   const shuffledIndexes = shuffle([...children.split('')].map((_, i) => i));
 
   return (
-    <h2 ref={ref} className={cn('text-9xl font-bold', className)} {...props}>
+    <h2 ref={ref} className={cn('text-7xl font-bold', className)} {...props}>
       {children.split('').map((val, index) => (
         <motion.span
           // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>

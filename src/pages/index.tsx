@@ -1,4 +1,5 @@
 import { Footer } from '@/components/global/footer';
+import { SmoothScroll } from '@/components/global/framer/smooth-scroll';
 import { About } from '@/components/pages/home/about';
 import { ContactUs } from '@/components/pages/home/contact';
 import { Events } from '@/components/pages/home/events';
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <Fragment>
       <main>
+        <SmoothScroll />
         {/* <FramerWrapper /> */}
         <section>
           <div className='h-screen'>
