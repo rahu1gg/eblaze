@@ -1,6 +1,7 @@
 import { Footer } from '@/components/global/footer';
 import { About } from '@/components/pages/home/about';
 import { ContactUs } from '@/components/pages/home/contact';
+import { Events } from '@/components/pages/home/events';
 import { Fragment } from 'react';
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
           </div>
         </section>
         <About />
+        <Events />
         <ContactUs />
       </main>
       <Footer />

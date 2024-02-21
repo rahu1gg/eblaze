@@ -13,9 +13,22 @@ const anim = {
     opacity: 1,
     transition: { duration: 0, delay: 0.03 * i },
   }),
+  inView: (i: number) => ({
+    opacity: 1,
+    transition: { duration: 0, delay: 0.03 * i },
+  }),
+  outView: (i: number) => ({
+    opacity: 0,
+    transition: { duration: 0, delay: 0.03 * i },
+  }),
 };
 
-export default function Pixels() {
+interface PixelProps {
+  inView?: boolean;
+  outView?: boolean;
+}
+
+export default function Pixels({ inView = false, outView = false }: PixelProps) {
   const [inner, setInner] = useState({ innerWidth: 1632, innerHeight: 838 });
 
   const shuffle = (a: number[]) => {
@@ -43,8 +56,9 @@ export default function Pixels() {
           key={index}
           className='w-full h-[2.5vw] bg-primary-color'
           variants={anim}
-          initial={'initial'}
+          initial={outView ? 'outView' : 'initial'}
           animate={'enter'}
+          whileInView={inView ? 'inView' : ''}
           exit={'exit'}
           custom={randomIndex}
         />
