@@ -78,6 +78,7 @@ function Sitemap() {
             <Link
               href={href}
               className='group inline-flex items-center justify-between text-muted bg-primary-color p-5 w-full text-6xl font-bold capitalize'
+              scroll={false}
             >
               <Heading className='text-6xl'>{label}</Heading>
               <span className='rotate-0 group-hover:rotate-[360deg] duration-1000 origin-center h-10 flex items-center justify-center'>

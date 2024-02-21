@@ -1,4 +1,6 @@
+import { SmoothScroll } from '@/components/global/framer/smooth-scroll';
 import '@/styles/main.scss';
+import { AnimatePresence } from 'framer-motion';
 import type { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
@@ -36,10 +38,19 @@ const flexible = localFont({
 
 export default function App({ Component, router, pageProps }: AppProps) {
   return (
-    // <AnimatePresence mode='wait'>
-    <main className={`${inter.className} ${supply.variable} ${flexible.variable} ${inter.variable}`}>
-      <Component key={router.route} {...pageProps} />
+    <main className={`${inter.className} ${supply.variable} ${flexible.variable} ${inter.variable} relative`}>
+      <AnimatePresence
+        mode='wait'
+        onExitComplete={() => {
+          console.log('complete');
+          if (typeof window !== 'undefined') {
+            window.scrollTo({ top: 0 });
+          }
+        }}
+      >
+        <Component key={router.route} {...pageProps} />
+      </AnimatePresence>
+      <SmoothScroll />
     </main>
-    // </AnimatePresence>
   );
 }
