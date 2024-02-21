@@ -1,53 +1,53 @@
 import { Heading } from '@/components/global/framer/heading';
+import Line from '@/components/global/framer/line';
 import Paragraph from '@/components/global/framer/paragraph';
-import Pixels from '@/components/global/framer/pixels';
-import { EVENTS } from '@/constants/events';
-import { motion } from 'framer-motion';
-import { Fragment, useState } from 'react';
-
-const linearGradients = [
-  'linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))',
-  'linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))',
-  'linear-gradient(to bottom right, var(--orange-500), var(--yellow-500))',
-  'linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))',
-  'linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))',
-  'linear-gradient(to bottom right, var(--orange-500), var(--yellow-500))',
-  'linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))',
-];
+import { Arrow } from '@/components/global/icons';
+import { EVENTS, Event } from '@/constants/events';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 export function Events() {
-  const [activeCard, setActiveCard] = useState(0);
+  return (
+    <section className='bg-muted'>
+      <div className='mx-5'>
+        <div className='py-40'>
+          <div className='mb-5'>
+            <Heading>Events</Heading>
+          </div>
+          <Line />
+          <div>
+            <Paragraph className='flex items-center justify-end gap-4'>
+              <Arrow className='size-5 rotate-180' /> <span className='font-medium text-lg'>scroll down</span>
+            </Paragraph>
+          </div>
+        </div>
+        <div className='relative px-4'>
+          {EVENTS.map((card) => (
+            <EventCard key={card.id} {...card} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EventCard({ name, description }: Event) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
 
   return (
-    <Fragment>
-      <section className='relative'>
-        <div className='sticky h-screen top-0 z-10 pointer-events-none'>
-          <Pixels inView />
-        </div>
-        <div className='mx-5 min-h-screen relative z-20'>
-          <div className='min-h-screen'>
-            <Heading className='text-background'>Events</Heading>
+    <div className='h-screen flex justify-center items-center relative'>
+      <div ref={ref} className='w-full'>
+        <div>
+          <div>
+            <Heading className='mb-5'>{name}</Heading>
           </div>
-          <div className='relative flex items-start px-4'>
-            <div>
-              {EVENTS.map(({ id, name, description }, index) => (
-                <motion.div key={id} className={`h-screen event-card event-${index}`} onViewportEnter={() => setActiveCard(index)}>
-                  <div>
-                    <Heading className='text-background whitespace-pre-wrap'>{name}</Heading>
-                    <Paragraph className='text-background pt-20 max-w-[700px]'>{description}</Paragraph>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            <motion.div
-              animate={{
-                background: linearGradients[activeCard % linearGradients.length],
-              }}
-              className='hidden lg:block h-60 w-80 rounded-md bg-white sticky top-10 overflow-hidden'
-            />
-          </div>
+          <Line />
+          <Paragraph className='max-w-[700px] py-2 text-lg'>{description}</Paragraph>
         </div>
-      </section>
-    </Fragment>
+      </div>
+      <motion.img src='/images/2.jpeg' className='inline-block absolute w-40 m-0 right-20' style={{ y }} alt='event-image' />
+    </div>
   );
 }

@@ -13,7 +13,7 @@ const anim: Variants = {
     filter: 'blur(0px)',
     transition: {
       duration: 0.15,
-      delay: 0.2 + 0.07 * i,
+      delay: 0.07 * i,
     },
   }),
 };
@@ -35,7 +35,7 @@ export function Heading({ className, children, amount = 0.95, ...props }: Headin
         <motion.span
           // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
           key={index}
-          className='inline-block font-inter origin-bottom pr-px'
+          className='inline-block font-inter origin-bottom pr-px whitespace-pre-wrap'
           variants={anim}
           initial='initial'
           animate={inView ? 'animate' : 'initial'}

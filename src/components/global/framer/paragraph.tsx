@@ -11,8 +11,6 @@ export default function Paragraph({ className, children, ...props }: ComponentPr
   const container = useRef<HTMLDivElement>(null);
   const inView = useInView(container, { once: true, amount: 0.75 });
 
-  if (typeof children !== 'string') return <p>Only strings allowed</p>;
-
   return (
     <div ref={container} className='overflow-hidden'>
       <motion.p variants={anim} initial='initial' animate={inView ? 'enter' : ''} className={cn('text-foreground text-sm', className)} {...props}>
