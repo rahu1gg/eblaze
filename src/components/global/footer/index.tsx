@@ -97,16 +97,14 @@ function FooterOutro() {
       <p>
         Crafted by{' '}
         <Button className='group p-0 text-primary-color font-medium' variant='link'>
-          <Link href={'/team'} className='inline-flex items-center justify-start'>
-            Eblaze team
-            <div className='relative ml-2 size-5 overflow-hidden'>
-              <div className='absolute transition-all duration-200 group-hover:-translate-y-5 group-hover:translate-x-5'>
-                <Arrow className='size-5 inline-block' />
-                <Arrow className='size-5 -translate-x-5' />
-              </div>
-            </div>
+          <Link href={'https://github.com/rahu1gg'} className='inline-flex items-center justify-start' target='_blank' rel='noreferrer'>
+            Rahul Palamarthi
+            <span className='bg-primary-color mx-3 inline-flex items-center justify-center text-background rounded-full size-5 overflow-hidden group-hover:size-16 duration-300'>
+              <Arrow className='-translate-x-10 translate-y-10 duration-300 group-hover:translate-x-0 group-hover:translate-y-0 size-4' />
+            </span>
           </Link>
         </Button>
+        with ❤️
       </p>
       <p className='font-medium'>© 2024 ELAZE</p>
     </div>
