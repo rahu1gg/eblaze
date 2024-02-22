@@ -42,7 +42,6 @@ export default function App({ Component, router, pageProps }: AppProps) {
       <AnimatePresence
         mode='wait'
         onExitComplete={() => {
-          console.log('complete');
           if (typeof window !== 'undefined') {
             window.scrollTo({ top: 0 });
           }
