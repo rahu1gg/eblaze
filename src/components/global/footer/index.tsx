@@ -16,7 +16,7 @@ export function Footer() {
         <CardBody className='h-auto w-full flex items-center justify-center'>
           <CardItem>
             <div>
-              <Heading amount={0.5} className='text-[25vw] font-bold uppercase flex items-center justify-center'>
+              <Heading amount={0.5} className='text-[24vw] font-bold uppercase flex items-center justify-center'>
                 EBLAZE
               </Heading>
             </div>
