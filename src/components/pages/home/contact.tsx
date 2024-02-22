@@ -6,10 +6,13 @@ import Link from 'next/link';
 export function ContactUs() {
   return (
     <section className='bg-muted'>
-      <div className='mx-5 min-h-screen py-28'>
+      <div className='px-5 min-h-screen py-28'>
         <div>
-          <em style={{ textAlignLast: 'right' }} className='inline-block pr-5'>
-            <Paragraph className='text-8xl/[140px] font-semibold pr-5'>LET'S TALK ABOUT EVENTS, PROJECTS AND WORK</Paragraph>
+          <em className='inline-block w-full'>
+            <Paragraph className='lg:text-7xl/[140px] md:text-6xl/[120px] sm:text-5xl/[100px] text-4xl/[80px] font-semibold'>
+              LET'S TALK ABOUT EVENTS, <br />
+              <span className='w-full inline-block text-end pr-5'>PROJECTS AND WORK</span>
+            </Paragraph>
           </em>
           <Link href={`mailto:${APP.email}`} className='group mt-14 pl-3 h-9 inline-flex items-center justify-start gap-3'>
             <Paragraph className='text-base'>{APP.email}</Paragraph>
