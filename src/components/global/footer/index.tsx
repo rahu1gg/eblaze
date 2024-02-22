@@ -34,10 +34,10 @@ export function Footer() {
 
 function ArrowLink() {
   return (
-    <div className='relative ml-1 size-10 overflow-hidden'>
-      <div className='absolute transition-all duration-200 group-hover:-translate-y-10 group-hover:translate-x-9'>
-        <Arrow />
-        <Arrow className='-translate-x-9' />
+    <div className='relative ml-1 lg:size-10 sm:size-7 size-6 overflow-hidden'>
+      <div className='absolute transition-all duration-200 lg:group-hover:-translate-y-10 sm:group-hover:-translate-y-8 group-hover:-translate-y-6 lg:group-hover:translate-x-9 sm:group-hover:translate-x-7 group-hover:translate-x-6'>
+        <Arrow className='lg:size-9 sm:size-7 size-6' />
+        <Arrow className=' lg:size-9 sm:size-7 size-6 lg:-translate-x-9 sm:-translate-x-7 -translate-x-6' />
       </div>
     </div>
   );
@@ -52,11 +52,13 @@ function SocialLinks() {
           <li key={id} className='border-t group-hover/ul:blur-[6px] group-hover/ul:hover:blur-0 duration-500'>
             <Link
               href={href}
-              className={'group inline-flex items-center justify-between text-muted bg-primary-color p-5 w-full text-6xl font-bold capitalize'}
+              className={
+                'group inline-flex items-center justify-between text-muted bg-primary-color p-5 w-full lg:text-6xl text-4xl font-bold capitalize'
+              }
               target='_blank'
               rel='noreferrer'
             >
-              <Heading className='text-6xl'>{label}</Heading>
+              <Heading className='lg:text-6xl sm:text-4xl text-3xl'>{label}</Heading>
               <span>
                 <ArrowLink />
               </span>
@@ -77,12 +79,12 @@ function Sitemap() {
           <li key={id} className='border-t last-of-type:border-b group-hover/ul:blur-[6px] group-hover/ul:hover:blur-0 duration-500'>
             <Link
               href={href}
-              className='group inline-flex items-center justify-between text-muted bg-primary-color p-5 w-full text-6xl font-bold capitalize'
+              className='group inline-flex items-center justify-between text-muted bg-primary-color p-5 w-full lg:text-6xl text-4xl font-bold capitalize'
               scroll={false}
             >
-              <Heading className='text-6xl'>{label}</Heading>
+              <Heading className='lg:text-6xl sm:text-4xl text-3xl'>{label}</Heading>
               <span className='rotate-0 group-hover:rotate-[360deg] duration-1000 origin-center h-10 flex items-center justify-center'>
-                <Star />
+                <Star className='lg:size-9 sm:size-7 size-6' />
               </span>
             </Link>
           </li>
@@ -94,7 +96,7 @@ function Sitemap() {
 
 function FooterOutro() {
   return (
-    <div className='bg-muted text-sm py-10 px-7 font-light text-primary-color flex items-center justify-between'>
+    <div className='bg-muted text-sm sm:py-10 py-7 px-7 font-light text-primary-color flex sm:items-center items-start justify-between sm:flex-row flex-col'>
       <p>
         Crafted by{' '}
         <Button className='group p-0 text-primary-color font-medium' variant='link'>
