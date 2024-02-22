@@ -7,6 +7,8 @@ export function EblazeSphere() {
 
   useEffect(() => {
     let render;
+    let handleResize;
+
     async function createSphere() {
       const cw = scene.current.clientWidth;
       const sW = scene.current.offsetWidth;
@@ -215,14 +217,14 @@ export function EblazeSphere() {
         }
       });
 
-      function handleResize() {
+      handleResize = () => {
         render.bounds.max.x = scene.current.offsetWidth;
         render.bounds.max.y = scene.current.offsetHeight;
         render.options.width = scene.current.offsetWidth;
         render.options.height = scene.current.offsetHeight;
         render.canvas.width = scene.current.offsetWidth;
         render.canvas.height = scene.current.offsetHeight;
-      }
+      };
 
       window.addEventListener('resize', handleResize);
     }
