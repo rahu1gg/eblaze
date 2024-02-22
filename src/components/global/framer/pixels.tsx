@@ -1,5 +1,5 @@
 import { Variants, motion } from 'framer-motion';
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 
 const anim: Variants = {
   initial: {
@@ -52,7 +52,7 @@ export default function Pixels() {
     });
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const { innerWidth, innerHeight } = window;
     setInner({ innerWidth, innerHeight });
   }, []);

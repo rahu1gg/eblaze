@@ -30,7 +30,7 @@ export function Heading({ className, children, amount = 0.95, ...props }: Headin
   const shuffledIndexes = shuffle([...children.split('')].map((_, i) => i));
 
   return (
-    <h2 ref={ref} className={cn('text-7xl font-bold', className)} {...props}>
+    <h2 ref={ref} className={cn('text-[24vw] uppercase text-center font-bold', className)} {...props}>
       {children.split('').map((val, index) => (
         <motion.span
           // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
