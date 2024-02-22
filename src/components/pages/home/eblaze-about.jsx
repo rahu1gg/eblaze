@@ -215,14 +215,16 @@ export function EblazeSphere() {
         }
       });
 
-      window.addEventListener('resize', () => {
+      function handleResize() {
         render.bounds.max.x = scene.current.offsetWidth;
         render.bounds.max.y = scene.current.offsetHeight;
         render.options.width = scene.current.offsetWidth;
         render.options.height = scene.current.offsetHeight;
         render.canvas.width = scene.current.offsetWidth;
         render.canvas.height = scene.current.offsetHeight;
-      });
+      }
+
+      window.addEventListener('resize', handleResize);
     }
 
     createSphere();
@@ -235,6 +237,7 @@ export function EblazeSphere() {
       render.canvas = null;
       render.context = null;
       render.textures = {};
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
