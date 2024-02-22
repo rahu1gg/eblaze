@@ -10,9 +10,9 @@ export function Events() {
   return (
     <section className='bg-muted'>
       <div className='mx-5'>
-        <div className='py-40'>
-          <div className='mb-5'>
-            <Heading>Events</Heading>
+        <div>
+          <div>
+            <Heading className='sm:text-[23vw] text-[22vw]'>Events</Heading>
           </div>
           <Line />
           <div>
@@ -41,13 +41,13 @@ function EventCard({ name, description }: Event) {
       <div ref={ref} className='w-full'>
         <div>
           <div>
-            <Heading className='mb-5'>{name}</Heading>
+            <Heading className='mb-5 lg:text-8xl md:text-7xl sm:text-6xl text-5xl text-foreground text-left'>{name}</Heading>
           </div>
           <Line />
           <Paragraph className='max-w-[700px] py-2 text-lg'>{description}</Paragraph>
         </div>
       </div>
-      <motion.img src='/images/2.jpeg' className='inline-block absolute w-40 m-0 right-20' style={{ y }} alt='event-image' />
+      <motion.img src='/images/2.jpeg' className='inline-block absolute w-56 m-0 md:right-20 ' style={{ y }} alt='event-image' />
     </div>
   );
 }
